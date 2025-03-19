@@ -160,7 +160,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-zerotier=y
         CONFIG_PACKAGE_luci-app-adguardhome=y
         # CONFIG_PACKAGE_luci-app-qosmate
-        CONFIG_PACKAGE_luci-app-mosdns=y
+        # CONFIG_PACKAGE_luci-app-mosdns
         EOF
 
         # LuCI主题:

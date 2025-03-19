@@ -34,19 +34,11 @@ rm -rf feeds/packages/utils/v2dat
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 # 下载插件
-git clone --depth 1 https://github.com/fw876/helloworld package/helloworld
-git clone --depth 1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
-git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 git clone --depth 1 https://github.com/chenmozhijin/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth 1 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
-git clone --depth 1 https://github.com/OldCoding/luci-app-filebrowser package/luci-app-filebrowser
-git clone --depth 1 https://github.com/hudra0/luci-app-qosmate package/luci-app-qosmate
-git clone --depth 1 https://github.com/hudra0/qosmate package/qosmate
 svn_export "master" "applications/luci-app-smartdns" "feeds/luci/applications/luci-app-smartdns" "https://github.com/immortalwrt/luci"
 svn_export "master" "net/smartdns" "feeds/packages/net/smartdns" "https://github.com/immortalwrt/packages"
-svn_export "main" "luci-app-passwall" "package/luci-app-passwall" "https://github.com/xiaorouji/openwrt-passwall"
 svn_export "master" "applications/luci-app-zerotier" "feeds/luci/applications/luci-app-zerotier" "https://github.com/immortalwrt/luci"
 svn_export "master" "net/zerotier" "feeds/packages/net/zerotier" "https://github.com/immortalwrt/packages"
 svn_export "v5" "luci-app-mosdns" "package/luci-app-mosdns" "https://github.com/sbwml/luci-app-mosdns"
@@ -67,11 +59,9 @@ cd package
 sed -i "s/LEDE /Wing build $(TZ=UTC-8 date "+%Y.%m.%d") @ LEDE /g" lean/default-settings/files/zzz-default-settings
 sed -i "s/LEDE/MI-R3G/" base-files/luci2/bin/config_generate
 sed -i "/firewall\.user/d" lean/default-settings/files/zzz-default-settings
-sed -i "s/192.168.1.1/192.168.10.1/g" base-files/luci2/bin/config_generate
+sed -i "s/192.168.1.1/192.168.9.1/g" base-files/luci2/bin/config_generate
 sed -i "/openwrt_luci/d" lean/default-settings/files/zzz-default-settings
 
-# 更新passwall规则
-curl -sfL -o ./luci-app-passwall/root/usr/share/passwall/rules/gfwlist https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt
 #AdguardHome
 cd ./luci-app-adguardhome/root/usr
 mkdir -p ./bin/AdGuardHome && cd ./bin/AdGuardHome

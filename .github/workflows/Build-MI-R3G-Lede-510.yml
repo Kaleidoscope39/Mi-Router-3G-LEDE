@@ -134,18 +134,18 @@ jobs:
 
         # LuCI插件选择:
         cat >> .config <<EOF
-        CONFIG_PACKAGE_luci-app-alist=y
-        CONFIG_PACKAGE_luci-app-passwall=y
+        # CONFIG_PACKAGE_luci-app-alist is not set
+        # CONFIG_PACKAGE_luci-app-passwall is not set
         CONFIG_PACKAGE_luci-app-autoreboot=y
         CONFIG_PACKAGE_luci-app-ddns=y
         CONFIG_PACKAGE_luci-app-filetransfer=y
-        CONFIG_PACKAGE_luci-app-filebrowser=y
+        # CONFIG_PACKAGE_luci-app-filebrowser is not set
         CONFIG_PACKAGE_luci-app-nlbwmon=y
         CONFIG_PACKAGE_luci-app-firewall=y
-        CONFIG_PACKAGE_luci-app-ssr-plus=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
-        CONFIG_PACKAGE_luci-app-wechatpush=y
-        CONFIG_PACKAGE_luci-app-pptp-server=y
+        # CONFIG_PACKAGE_luci-app-ssr-plus is not set
+        # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray is not set
+        # CONFIG_PACKAGE_luci-app-wechatpush is not set
+        CONFIG_PACKAGE_luci-app-pptp-server
         # CONFIG_PACKAGE_luci-app-samba4 is not set
         CONFIG_PACKAGE_luci-app-smartdns=y
         CONFIG_PACKAGE_luci-app-ttyd=y
@@ -159,7 +159,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-vlmcsd=y
         CONFIG_PACKAGE_luci-app-zerotier=y
         CONFIG_PACKAGE_luci-app-adguardhome=y
-        CONFIG_PACKAGE_luci-app-qosmate=y
+        # CONFIG_PACKAGE_luci-app-qosmate
         CONFIG_PACKAGE_luci-app-mosdns=y
         EOF
 
